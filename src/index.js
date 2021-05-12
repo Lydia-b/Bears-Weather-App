@@ -1,13 +1,21 @@
 //Date and Time element
-let h3Element = document.querySelector("#current-date-time");
-let now = new Date();
-let hour = now.getHours();
-let minutes = now.getMinutes();
+function formatDate(timestamp) {
 
-let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-let day = days[now.getDay()];
+    let date = new Date(timestamp);
+    let hour = date.getHours();
+    if (hour < 10) {
+        hour = `0${hour}`;
+    }
+    let minutes = date.getMinutes();
+    if (minutes < 10) {
+        minutes = `0${minutes}`;
+    }
 
-h3Element.innerHTML = `${day} ${hour}:${minutes}`;
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let day = days[date.getDay()];
+    return `${day} ${hour}:${minutes}`
+
+}
 
 //Display current city temp and condition
 function showCurrentTemperature(response) {
@@ -27,6 +35,9 @@ function showCurrentTemperature(response) {
 
     let currentLowTemp = document.querySelector("#low-temp");
     currentLowTemp.innerHTML = `${lowTemp}˚C`;
+    
+    let h3Element = document.querySelector("#current-date-time");
+    h3Element.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 //Enter city search

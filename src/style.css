@@ -21,7 +21,7 @@
 .main-text {
     color: #f3f4ed;
 }
-.capitalize {
+.capitalize::first-letter {
     text-transform: capitalize;
 }
 h1, h2 {
