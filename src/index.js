@@ -19,13 +19,13 @@ function formatDate(timestamp) {
 
 //Display current city temp and condition
 function showCurrentTemperature(response) {
-    let temperature = Math.round(response.data.main.temp);
     let condition = response.data.weather[0].description;
     let highTemp = Math.round(response.data.main.temp_max);
     let lowTemp = Math.round(response.data.main.temp_min);
 
+    temperatureCelsius = Math.round(response.data.main.temp);
     let currentTemperature = document.querySelector("#current-temperature");
-    currentTemperature.innerHTML = `${temperature}˚C`;
+    currentTemperature.innerHTML = `${temperatureCelsius}`;
 
     let currentCondition = document.querySelector("#condition");
     currentCondition.innerHTML = `${condition}`;
@@ -60,9 +60,6 @@ function getEntry(event) {
     }
 }
 
-let enterCityName = document.querySelector("#enter-city");
-enterCityName.addEventListener("submit", getEntry);
-
 //current location
 function showPosition(response) {
     let latitude = response.coords.latitude;
@@ -78,6 +75,7 @@ function showPosition(response) {
     let h1 = document.querySelector("#city-name");
     h1.innerHTML = "Current location";
 }
+
 function showStandardValue() {
     let units = "metric";
     let apiKey = "caa7b6ca0477e93f78dc6b9c7d7c0e95";
@@ -90,5 +88,35 @@ function showStandardValue() {
     axios.get(apiUrl).then(showCurrentTemperature);
 }
 
+function showFahrenheitTemp(event) {
+    event.preventDefault();
+    let fahrenheitTemperature = (temperatureCelsius * 9) / 5 + 32;
+    let currentTemperature = document.querySelector("#current-temperature");
+    currentTemperature.innerHTML = Math.round(fahrenheitTemperature);
+    linkCelsius.classList.remove("active");
+    //linkCelsius.classList.add("inactive");
+    linkFahrenheit.classList.add("active");
+}
+
+function showCelsiusTemp(event) {
+    event.preventDefault();
+    let currentTemperature = document.querySelector("#current-temperature");
+    currentTemperature.innerHTML = temperatureCelsius; 
+    linkCelsius.classList.add("active");
+    //linkFahrenheit.classList.add("inactive");
+    linkFahrenheit.classList.remove("active");
+}
+
 showStandardValue();
 navigator.geolocation.getCurrentPosition(showPosition);
+
+let temperatureCelsius = null
+
+let linkFahrenheit = document.querySelector("#link-fahrenheit");
+linkFahrenheit.addEventListener("click", showFahrenheitTemp);
+
+let linkCelsius = document.querySelector("#link-celsius");
+linkCelsius.addEventListener("click", showCelsiusTemp);
+
+let enterCityName = document.querySelector("#enter-city");
+enterCityName.addEventListener("submit", getEntry);
