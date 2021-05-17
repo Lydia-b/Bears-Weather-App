@@ -31,10 +31,10 @@ function showCurrentTemperature(response) {
     currentCondition.innerHTML = `${condition}`;
 
     let currentHighTemp = document.querySelector("#high-temp");
-    currentHighTemp.innerHTML = `${highTemp}˚C`;
+    currentHighTemp.innerHTML = `Hi:${highTemp}˚C`;
 
     let currentLowTemp = document.querySelector("#low-temp");
-    currentLowTemp.innerHTML = `${lowTemp}˚C`;
+    currentLowTemp.innerHTML = `Lo:${lowTemp}˚C`;
     
     let h3Element = document.querySelector("#current-date-time");
     h3Element.innerHTML = formatDate(response.data.dt * 1000);
