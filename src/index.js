@@ -16,25 +16,37 @@ function formatDate(timestamp) {
     return `${day} ${hour}:${minutes}`
 
 }
+
+function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    return days[day];
+}
+
 //5 day forecast
 function displayForecast(response) {
-    console.log(response.data.daily)
+    let forecast = response.data.daily;
     let forecastElement = document.querySelector("#forecast");
-    let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
-
     let forecastHTML = `<div class="row">`;
-    days.forEach(function (day) {
+
+    forecast.forEach(function (forecastDay, index) {
+        if (index < 6) {
         forecastHTML = forecastHTML +
             `
-        <div class="col-sm text-center">
-                 ${day}
+        <div class="col-2 text-center">
+            ${formatDay(forecastDay.dt)}
              <br />
-            <i class="fas fa-sun"></i>
+            <img 
+                src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+                alt="" 
+            />
              <br />
-                 19˚ |
-             <span class="min-temperature"> 9˚ </span>
+                 ${Math.round(forecastDay.temp.max)}˚ |
+             <span class="min-temperature"> ${Math.round(forecastDay.temp.min)}˚ </span>
         </div>
         `;
+        }
     });
 
     forecastHTML = forecastHTML + `</div>`;
@@ -88,7 +100,6 @@ function getEntry(event) {
 function showPosition(response) {
     let latitude = response.coords.latitude;
     let longitude = response.coords.longitude;
-    console.log(response)
     let units = "metric";
     let apiKey = "caa7b6ca0477e93f78dc6b9c7d7c0e95";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${units}&appid=${apiKey}`;
