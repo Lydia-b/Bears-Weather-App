@@ -9,7 +9,7 @@
 }
 .current {
     color: #f3f4ed;
-    padding: 20px;
+    padding: 10px, 20px, 5px, 20px;
 }
 .card {
     margin: 15px 0px;
