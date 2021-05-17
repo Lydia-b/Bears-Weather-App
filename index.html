@@ -15,153 +15,169 @@
 <body>
     <div class="container">
         <form id="enter-city">
-           <input type="search" class="form-control" placeholder="Enter city name" id="current-city"> 
+           <input 
+            type="search" 
+            class="form-control" 
+            placeholder="Enter city name" 
+            id="current-city"
+            /> 
         </form>
-        <div class="row">
-            <div class="col-7 current">
-                <h1 class="capitalize" id="city-name">
-                    Oops
-                </h1>
-                <h3 id="current-date-time"></h3>
-                <strong class="temperature" id="current-temperature">
-                  - -      
-                </strong>
-                <span class="units"> <a href="" id="link-celsius" class="active">˚C</a> | <a href="" id="link-fahrenheit" class="inactive">˚F</a></span>
-            </div>
-            <div class="col-5 text-center current">
-                <img src="" alt="" id="icon">
-                <p class="capitalize" id="condition">
-                n/a
-                </p>
-                <p>
-                <i class="fas fa-angle-up"></i>
-                <span id="high-temp">n/a ˚C</span>
-                <i class="fas fa-angle-down"></i>
-                <span id="low-temp">n/a ˚C</span>
-                </p>
-            </div>
-        </div>
-    <div class="card card-backround">
-        <div class="card-body">
-            <id class="main-text">
-            <h4 class="card-title">
-               Hourly Forecast 
-            </h4>
             <div class="row">
-            <div class="col-sm text-center">
-                Now
-                <br />
-                <i class="fas fa-cloud"></i>
-                <br />
-                15 ˚C
-            </div>
-            <div class="col-sm text-center">
-                12
-                <br />
-                <i class="fas fa-cloud"></i>
-                <br />
-                15 ˚C
-            </div>
-            <div class="col-sm text-center">
-                13
-                <br />
-                <i class="fas fa-cloud"></i>
-                <br />
-                15˚C
-            </div>
-            <div class="col-sm text-center">
-                14
-                <br />
-                <i class="fas fa-cloud"></i>
-                <br />
-                15 ˚C
-            </div>
-            <div class="col-sm text-center">
-                15
-                <br />
-                <i class="fas fa-cloud"></i>
-                <br />
-                15 ˚C
-            </div>
-            <div class="col-sm text-center">
-                16
-                <br />
-                <i class="fas fa-cloud"></i>
-                <br />
-                15 ˚C
-            </div>
-            <div class="col-sm text-center">
-                17
-                <br />
-                <i class="fas fa-cloud"></i>
-                <br />
-                15 ˚C
-            </div>
-            <div class="col-sm text-center">
-                18
-                <br />
-                <i class="fas fa-cloud"></i>
-                <br />
-                15 ˚C
-            </div>
-            </div>
-            </id>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            <id class="main-text">
-            <h4 class="card-title">
-               5 Day Forecast 
-            </h4>
-            <div class="row">
-                <div class="col-sm text-center">
-                Tomorrow
-                <br />
-                <i class="fas fa-sun"></i>
-                <br />
-                ↑18 ˚C ↓9 ˚C
+                <div class="col-7 current">
+                    <h1 class="capitalize" id="city-name">
+                        Oops
+                    </h1>
+                    <h3 id="current-date-time"></h3>
+                    <div class="row">
+                        <div class="col-2">
+                            <strong class="temperature" id="current-temperature">
+                                - -      
+                            </strong>
+                        </div>
+                        <div class="col-10">
+                            <span class="units"> 
+                                <a href="" id="link-celsius" class="active">˚C</a> 
+                                    | 
+                                <a href="" id="link-fahrenheit">˚F</a>
+                            </span>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm text-center">
-                Sun
-                <br />
-                <i class="fas fa-sun"></i>
-                <br />
-                18 ˚C ↓9 ˚C
-                </div>
-                <div class="col-sm text-center">
-                Mon
-                <br />
-                <i class="fas fa-sun"></i>
-                <br />
-                ↑18 ˚C ↓9 ˚C
-                </div>
-                <div class="col-sm text-center">
-                Tue
-                <br />
-                <i class="fas fa-sun"></i>
-                <br />
-                ↑18 ˚C ↓9 ˚C
-                </div>
-                <div class="col-sm text-center">
-                Wed
-                <br />
-                <i class="fas fa-sun"></i>
-                <br />
-                ↑18 ˚C ↓9 ˚C
+                <div class="col-5 text-center current">
+                    <img src="" alt="" id="icon" />
+                    <p class="capitalize" id="condition">
+                        n/a
+                    </p>
+                    <p>
+                        <i class="fas fa-angle-up"></i>
+                        <span id="high-temp">-- ˚C</span>
+                        <i class="fas fa-angle-down"></i>
+                        <span id="low-temp">-- ˚C</span>
+                    </p>
                 </div>
             </div>
-            </id>
-        </div>
-    </div>  
+            <div class="card card-backround">
+                <div class="card-body">
+                    <id class="main-text">
+                        <h4 class="card-title">
+                            Hourly Forecast 
+                        </h4>
+                        <div class="row">
+                            <div class="col-sm text-center">
+                                    Now
+                                <br />
+                                <i class="fas fa-cloud"></i>
+                                <br />
+                                    15 ˚C
+                            </div>
+                            <div class="col-sm text-center">
+                                    12
+                                <i class="fas fa-cloud"></i>
+                                <br />
+                                <br />
+                                    15 ˚C
+                            </div>
+                            <div class="col-sm text-center">
+                                    13
+                                <br />
+                                <i class="fas fa-cloud"></i>
+                                <br />
+                                    15˚C
+                            </div>
+                            <div class="col-sm text-center">
+                                    14
+                                <br />
+                                <i class="fas fa-cloud"></i>
+                                <br />
+                                    15 ˚C
+                            </div>
+                            <div class="col-sm text-center">
+                                    15
+                                <br />
+                                <i class="fas fa-cloud"></i>
+                                <br />
+                                    15 ˚C
+                            </div>
+                            <div class="col-sm text-center">
+                                    16
+                                <br />
+                                <i class="fas fa-cloud"></i>
+                                <br />
+                                    15 ˚C
+                            </div>
+                            <div class="col-sm text-center">
+                                    17
+                                <br />
+                                <i class="fas fa-cloud"></i>
+                                <br />
+                                    15 ˚C
+                            </div>
+                            <div class="col-sm text-center">
+                                18
+                                <br />
+                                <i class="fas fa-cloud"></i>
+                                <br />
+                                15 ˚C
+                            </div>
+                        </div>
+                    </id>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <id class="main-text">
+                        <h4 class="card-title">
+                            5 Day Forecast 
+                        </h4>
+                        <div class="row">
+                            <div class="col-sm text-center">
+                                Tomorrow
+                            <br />
+                            <i class="fas fa-sun"></i>
+                            <br />
+                                ↑18 ˚C ↓9 ˚C
+                            </div>
+                            <div class="col-sm text-center">
+                                Sun
+                            <br />
+                            <i class="fas fa-sun"></i>
+                            <br />
+                                18 ˚C ↓9 ˚C
+                            </div>
+                            <div class="col-sm text-center">
+                                Mon
+                            <br />
+                            <i class="fas fa-sun"></i>
+                            <br />
+                                ↑18 ˚C ↓9 ˚C
+                            </div>
+                            <div class="col-sm text-center">
+                                Tue
+                            <br />
+                            <i class="fas fa-sun"></i>
+                            <br />
+                                ↑18 ˚C ↓9 ˚C
+                            </div>
+                            <div class="col-sm text-center">
+                                Wed
+                            <br />
+                            <i class="fas fa-sun"></i>
+                            <br />
+                                ↑18 ˚C ↓9 ˚C
+                            </div>
+                        </div>
+                    </id>
+                </div>
+            </div>  
             <p>
-            <a href="https://github.com/Lydia-b/Bears-Weather-App" target="_blank">
-                Open source code        
-            </a>
-                by Lydia Bearham
+                <a 
+                href="https://github.com/Lydia-b/Bears-Weather-App" 
+                target="_blank"
+                >   Open source code        
+                </a>
+                    by Lydia Bearham
             </p>
-    </div>
-            
+    </div>        
 </body>
     <script type="text/javascript" src="src/index.js"></script>
 </html>

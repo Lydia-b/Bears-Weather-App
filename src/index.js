@@ -94,7 +94,6 @@ function showFahrenheitTemp(event) {
     let currentTemperature = document.querySelector("#current-temperature");
     currentTemperature.innerHTML = Math.round(fahrenheitTemperature);
     linkCelsius.classList.remove("active");
-    //linkCelsius.classList.add("inactive");
     linkFahrenheit.classList.add("active");
 }
 
@@ -103,7 +102,6 @@ function showCelsiusTemp(event) {
     let currentTemperature = document.querySelector("#current-temperature");
     currentTemperature.innerHTML = temperatureCelsius; 
     linkCelsius.classList.add("active");
-    //linkFahrenheit.classList.add("inactive");
     linkFahrenheit.classList.remove("active");
 }
 
