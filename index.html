@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head></head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,11 +24,11 @@
                     aria-describedby="button-addon2"
                     id="current-city"
                     >
-                <button 
-                    class="btn btn-dark" 
-                    type="button" 
-                    id="button-addon2">Search
-                </button>
+                    <button 
+                        class="btn btn-dark" 
+                        type="button" 
+                        id="button-addon2">Search
+                    </button>
                 </div>
                 <div class="col-3">
                     <input 
@@ -39,57 +39,55 @@
                 </div>
             </div>
         </form>
-            <div class="row">
-                <div class="col-7 current">
-                    <h1 class="capitalize" id="city-name">
-                        Oops
-                    </h1>
-                    <h3 id="current-date-time"></h3>
-                    <div class="row row-temp">
-                        <div class="col-2">
-                            <strong class="temperature" id="current-temperature">
-                                - -      
-                            </strong>
-                        </div>
-                        <div class="col-10">
-                            <span class="units"> 
-                                <a href="" id="link-celsius" class="active">˚C</a> 
-                                    | 
-                                <a href="" id="link-fahrenheit">˚F</a>
-                            </span>
-                        </div>
+        <div class="row">
+            <div class="col-7 current">
+                <h1 class="capitalize" id="city-name">
+                    Oops
+                </h1>
+                <h3 id="current-date-time"></h3>
+                <div class="row row-temp">
+                    <div class="col-2">
+                        <strong class="temperature" id="current-temperature">
+                            - -      
+                        </strong>
+                    </div>
+                    <div class="col-10">
+                        <span class="units"> 
+                            <a href="" id="link-celsius" class="active">˚C</a> 
+                                | 
+                            <a href="" id="link-fahrenheit">˚F</a>
+                        </span>
                     </div>
                 </div>
-                <div class="col-5 text-center current">
-                    <img src="" alt="" id="icon" />
-                    <p class="capitalize weather-condition" id="condition">
-                        n/a
-                    </p>
-                    <p>
-                        <span class="weather-condition" id="high-temp">-- ˚C</span>
-                        <br>
-                        <span class="weather-condition min-temperature" id="low-temp">-- ˚C</span>
-                    </p>
-                </div>
             </div>
-            <div class="card">
-                <div class="card-body">
-                    <id class="main-text">
-                        <h4 class="card-title">
-                            Daily Forecast 
-                        </h4>
-                        <div class=weather-forecast id="forecast"></div>
-                    </id>
-                </div>
-            </div>  
-            <p>
-                <a 
-                href="https://github.com/Lydia-b/Bears-Weather-App" 
-                target="_blank"
-                >   Open source code        
-                </a>
-                    by Lydia Bearham
-            </p>
+            <div class="col-5 text-center current">
+                <img src="" alt="" id="icon" />
+                <p class="capitalize weather-condition" id="condition">
+                    n/a
+                </p>
+                <p>
+                    <span class="weather-condition" id="high-temp">-- ˚C</span>
+                    <br/>
+                    <span class="weather-condition min-temperature" id="low-temp">-- ˚C</span>
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <id class="main-text">
+                    <h4 class="card-title">
+                        Daily Forecast 
+                    </h4>
+                    <div class="weather-forecast" id="forecast"></div>
+                </id>
+            </div>
+        </div>  
+        <p>
+            <a 
+            href="https://github.com/Lydia-b/Bears-Weather-App" 
+            target="_blank">Open source code        
+            </a> by Lydia Bearham
+        </p>
     </div>        
 </body>
 
