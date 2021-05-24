@@ -53,8 +53,6 @@ function showWeatherForCity(cityName) {
     let apiKey = "caa7b6ca0477e93f78dc6b9c7d7c0e95";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName.trim()}&units=metric&appid=${apiKey}`;
 
-    console.log("get city info: " + apiUrl);
-
     axios.get(apiUrl).then(function (response) {
         console.log("found lon: " + response.data.coord.lon);
         console.log("found lon: " + response.data.coord.lat);
@@ -83,8 +81,6 @@ function updateAllHtmlForCity(longitude, latitude) {
 
 //Display current city, temp and condition
 function updateCurrentWeather(response) {
-
-    console.log(response)
 
     let condition = response.data.weather[0].description;
     let highTemp = Math.round(response.data.main.temp_max);
@@ -115,8 +111,6 @@ function updateCurrentWeather(response) {
 //4 day forecast
 function updateForecast(response) {
 
-    console.log(response);
-
     let apiKey = "caa7b6ca0477e93f78dc6b9c7d7c0e95";
 
     let latitude = response.data.coord.lat;
@@ -125,7 +119,6 @@ function updateForecast(response) {
     apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(function (response) {
 
-        console.log(response)
         let forecast = response.data.daily;
         let forecastElement = document.querySelector("#forecast");
         let forecastHTML = `<div class="row">`;
@@ -156,11 +149,6 @@ function updateForecast(response) {
 
 }
 
-/***********************************************
- * OLD STUFF - remove when not needed anymore
- ***********************************************/
-
-
 function showFahrenheitTemp(event) {
     event.preventDefault();
     let fahrenheitTemperature = (temperatureCelsius * 9) / 5 + 32;
@@ -177,8 +165,6 @@ function showCelsiusTemp(event) {
     linkCelsius.classList.add("active");
     linkFahrenheit.classList.remove("active");
 }
-
-//showStandardValue();
 
 let temperatureCelsius = null
 
