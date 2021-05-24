@@ -16,7 +16,7 @@
     <div class="container">
         <form id="enter-city">
             <div class="row">
-                <div class="input-group mb-3 col-9">
+                <div class="input-group mb-3 col-12">
                   <input 
                     type="search" 
                     class="form-control" 
@@ -26,17 +26,23 @@
                     >
                     <button 
                         class="btn btn-dark" 
-                        type="button" 
-                        id="button-addon2">Search
+                        type="submit" 
+                        id="submit-button">Search
+                    </button>
+<!--                     <input 
+                    type="submit" 
+                    class="btn btn-dark fas fa-location-arrow"
+                    />  -->
+                    <button 
+                    class="btn btn-light" 
+                    type="button"
+                    id="location-button">
+                        <i class="fas fa-location-arrow" style="color:#2f5d62"></i>
                     </button>
                 </div>
-                <div class="col-3">
-                    <input 
-                    type="submit" 
-                    value="Current location"
-                    class="btn btn-dark"
-                    /> 
-                </div>
+<!--                 <div class="col-3">
+
+                </div> -->
             </div>
         </form>
         <div class="row">
